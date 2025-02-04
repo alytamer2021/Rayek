@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rayek - Hoodie Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .product {
+            background: white;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 250px;
+            text-align: center;
+        }
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .btn {
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #555;
+        }
+        .wishlist {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: inline-block;
+            border-radius: 10px;
+            width: 80%;
+        }
+        .wishlist-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .wishlist-item img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+        }
+        .visa-logo {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+        input {
+            padding: 10px;
+            margin: 5px;
+            width: 90%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .pay-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+        .pay-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Styling for sorting dropdown */
+        .sort-container {
+            margin: 20px 0;
+        }
+        .sort-dropdown {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Rayek - Hoodie Store</div>
+    
+    <!-- Sorting Dropdown -->
+    <div class="sort-container">
+        <label for="sort" style="font-size: 18px;">Sort by:</label>
+        <select id="sort" class="sort-dropdown">
+            <option value="default">Default</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name-asc">Name: A to Z</option>
+            <option value="name-desc">Name: Z to A</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <div class="product" data-name="Black Hoodie" data-price="49.99">
+            <img src="https://via.placeholder.com/200" alt="Hoodie">
+            <h2>Black Hoodie</h2>
+            <p>$49.99</p>
+            <p>Size: XS, S, M, L, XL</p>
+            <p>Earn 500 Points</p>
+            <button class="btn">Add to Cart</button>
+            <button class="btn">Add to Wishlist</button>
+        </div>
+        <div class="product" data-name="White Hoodie" data-price="54.99">
+            <img src="https://via.placeholder.com/200" alt="Hoodie">
+            <h2>White Hoodie</h2>
+            <p>$54.99</p>
+            <p>Size: XS, S, M, L, XL</p>
+            <p>Earn 500 Points</p>
+            <button class="btn">Add to Cart</button>
+            <button class="btn">Add to Wishlist</button>
+        </div>
+    </div>
+
+    <div class="wishlist">
+        <h2>Wishlist</h2>
+        <div class="wishlist-item">
+            <img src="https://via.placeholder.com/50" alt="Hoodie">
+            <p>Black Hoodie - $49.99</p>
+            <button class="btn">Remove</button>
+        </div>
+    </div>
+    
+    <div class="offer-section">
+        <h2>Exclusive Offers</h2>
+        <p>Buy 2 Hoodies and get 10% off!</p>
+        <p>Earn double points on your first purchase!</p>
+    </div>
+    
+    <div class="challenge-section">
+        <h2>Challenges</h2>
+        <p>Complete our monthly challenge and win free hoodies!</p>
+        <p>Refer 5 friends and get a free hoodie!</p>
+    </div>
+    
+    <div class="points-section">
+        <h2>Reward Points</h2>
+        <p>Every hoodie purchase earns you 500 points.</p>
+        <p>Redeem your points for discounts and exclusive merchandise!</p>
+    </div>
+    
+    <div class="profile-section">
+        <h2>User Profile</h2>
+        <p>Username: <b>JohnDoe</b></p>
+        <p>Points: <b>1500</b></p>
+        <button class="btn">Edit Profile</button>
+        <button class="btn">View Order History</button>
+    </div>
+    
+    <div class="payment">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" class="visa-logo">
+        <h2>Visa Payment</h2>
+        <input type="text" placeholder="Card Number">
+        <input type="text" placeholder="Card Holder Name">
+        <input type="text" placeholder="Expiration Date (MM/YY)">
+        <input type="text" placeholder="CVV">
+        <button class="pay-btn">Pay Now</button>
+    </div>
+    
+    <div class="footer">
+        <p>Follow us on Instagram: <a href="https://www.instagram.com/raye2__">@raye2__</a></p>
+        <p>Contact us on WhatsApp: 01005277952</p>
+    </div>
+
+    <script>
+        // Sorting functionality
+        document.getElementById('sort').addEventListener('change', function() {
+            const products = document.querySelectorAll('.product');
+            const sortValue = this.value;
+
+            const sortedProducts = Array.from(products).sort((a, b) => {
+                const priceA = parseFloat(a.getAttribute('data-price'));
+                const priceB = parseFloat(b.getAttribute('data-price'));
+                const nameA = a.getAttribute('data-name').toLowerCase();
+                const nameB = b.getAttribute('data-name').toLowerCase();
+
+                if (sortValue === 'price-asc') {
+                    return priceA - priceB;
+                } else if (sortValue === 'price-desc') {
+                    return priceB - priceA;
+                } else if (sortValue === 'name-asc') {
+                    return nameA.localeCompare(nameB);
+                } else if (sortValue === 'name-desc') {
+                    return nameB.localeCompare(nameA);
+                }
+                return 0; // Default: no sorting
+            });
+
+            // Append sorted products back to the container
+            const container = document.querySelector('.container');
+            sortedProducts.forEach(product => {
+                container.appendChild(product);
+            });
+        });
+    </script>
+</body>
+</html>
